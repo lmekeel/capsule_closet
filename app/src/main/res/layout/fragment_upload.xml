@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UploadFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:layout_margin="16dp"
+        android:orientation="vertical"
+        tools:ignore="UselessParent">
+
+        <Button
+            android:id="@+id/create_post"
+            android:layout_width="200dp"
+            android:layout_height="60dp"
+            android:backgroundTint="@color/select_button"
+            android:text="Create Post"
+            android:textColor="@color/black"
+            android:layout_margin="10dp"
+            android:background="@android:drawable/dialog_holo_dark_frame"
+
+            />
+
+        <Button
+            android:id="@+id/upload_to_closet"
+            android:layout_width="200dp"
+            android:layout_height="60dp"
+            android:backgroundTint="@color/select_button"
+            android:text="Upload closet item"
+            android:textColor="@color/black"
+            tools:ignore="TextSizeCheck"
+            android:layout_margin="10dp"
+            android:background="@android:drawable/dialog_holo_dark_frame"
+            />
+
+        <Button
+            android:id="@+id/save_to_outfits"
+            android:layout_width="200dp"
+            android:layout_height="60dp"
+            android:background="@android:drawable/dialog_holo_dark_frame"
+            android:backgroundTint="@color/select_button"
+            android:text="Save outfit"
+            android:textColor="@color/black"
+            android:layout_margin="10dp"
+
+             />
+
+    </LinearLayout>
+
+</FrameLayout>

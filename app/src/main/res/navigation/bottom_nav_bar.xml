@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bottom_nav_bar"
+    app:startDestination="@id/home">
+    <fragment
+        android:id="@+id/home"
+        android:name="com.example.curacap.HomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_home"/>
+    <fragment
+        android:id="@+id/closet"
+        android:name="com.example.curacap.ClosetFragment"
+        android:label="Closet"
+        tools:layout="@layout/fragment_closet"/>
+    <fragment
+        android:id="@+id/upload"
+        android:name="com.example.curacap.UploadFragment"
+        android:label="Upload"
+        tools:layout="@layout/fragment_upload"/>
+    <fragment
+        android:id="@+id/inbox"
+        android:name="com.example.curacap.MessagesFragment"
+        android:label="Notifications"
+        tools:layout="@layout/fragment_messages"/>
+    <fragment
+        android:id="@+id/profile"
+        android:name="com.example.curacap.ProfileFragment"
+        android:label="Profile"
+        tools:layout="@layout/fragment_profile"/>
+
+
+</navigation>

@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">StyleCap</string>
+    <string name="log_in">Log In</string>
+    <string name="email">email</string>
+    <string name="username">Username:</string>
+    <string name="curate_your_capsule_wardrobe">Curate and share your Capsule wardrobe</string>
+    <string name="welcome_to_stylecap">Welcome to StyleCap!</string>
+    <string name="password">Password:</string>
+    <string name="password_hint">password</string>
+    <string name="new_to_stylecap">New to StyleCap?</string>
+    <string name="register_here">register here</string>
+    <string name="register">Register</string>
+    <string name="have_an_account_already">Have an account already?</string>
+    <string name="log_out">Log Out</string>
+    <string name="start_your_stylecap_journey">Start your StyleCap journey!</string>
+    <string name="home">Home</string>
+    <string name="closet">Closet</string>
+    <string name="inbox">Inbox</string>
+    <string name="upload">Upload</string>
+    <string name="profile">Profile</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="todo">TODO</string>
+    <string name="image">image</string>
+    <string name="title_of_picture">title of picture</string>
+    <string name="username_and_profile_pic">Username and Profile Pic</string>
+    <string name="save_like_count">save/like count</string>
+    <string name="profile_image">Profile Image</string>
+    <string name="username_display">\@</string>
+    <string name="likes_button">likes</string>
+    <string name="bookmarks_button">saves</string>
+    <string name="feed_button">feed</string>
+    <string name="image_picker">images</string>
+    <string name="like">like</string>
+    <string name="upload_a_photo">Upload a photo</string>
+</resources>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ClosetFragment">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            >
+
+            <Button
+                android:id="@+id/all_items"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@drawable/button_selector"
+                android:text="All Items"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/outfits"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@drawable/button_selector"
+                android:text="My Outfits"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/all_items"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:id="@+id/create_collection"
+                android:text="+ create outfit"
+                android:textAlignment="viewStart"
+                android:backgroundTint="@color/white"
+                app:layout_constraintTop_toBottomOf="@+id/all_items">
+
+            </Button>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/closet_recycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/create_collection" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

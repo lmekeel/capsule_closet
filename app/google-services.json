@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "887570970140",
+    "project_id": "curacap-2490e",
+    "storage_bucket": "curacap-2490e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:887570970140:android:09b2ca5eb603b9b38351d9",
+        "android_client_info": {
+          "package_name": "com.example.curacap"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "887570970140-lru31524n4esig1brt2jghpggtbkm4bp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCR8xNm2FXYCOw5NDqqV_IO6E-PRiqzt3w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "887570970140-lru31524n4esig1brt2jghpggtbkm4bp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
