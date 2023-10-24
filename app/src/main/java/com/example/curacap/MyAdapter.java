@@ -10,10 +10,16 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.squareup.picasso.Picasso;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder>{
-    PostData[] feedData;
+    ArrayList<PostData> feedData;
     Context context;
-    public MyAdapter(PostData[] feedData, HomeFragment homeFragment) {
+    private List<String> imageURLs;
+    public MyAdapter(ArrayList<PostData> feedData, HomeFragment homeFragment) {
         this.feedData = feedData;
         this.context = homeFragment.getActivity();
     }
@@ -29,23 +35,26 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder>{
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        final PostData feedDataList = feedData[position];
-        holder.feedImage.setImageResource(feedDataList.getImage());
+        final PostData feedDataList = feedData.get(position);
+        String imageUrl = feedDataList.getImage();
+        Picasso.get()
+                .load(imageUrl)
+                .placeholder(R.drawable.placeholder_image) // Placeholder image
+                .error(R.drawable.placeholder_image)// Error image
+                .into(holder.feedImage);
+        //holder.feedImage.setImageResource(feedDataList.getImage());
         holder.imageTitle.setText(feedDataList.getTitle());
         holder.imageCreator.setText(feedDataList.getUsername());
         holder.likeCount.setText(String.valueOf(feedDataList.getLikeCount()));
 
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //Toast.makeText(context, "Take to new fragment or activity", Toast.LENGTH_SHORT).show();
-            }
+        holder.itemView.setOnClickListener(v -> {
+            //Toast.makeText(context, "Take to new fragment or activity", Toast.LENGTH_SHORT).show();
         });
     }
 
     @Override
     public int getItemCount() {
-        return feedData.length;
+        return feedData.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{

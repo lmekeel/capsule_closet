@@ -11,17 +11,17 @@ public class User {
 
 
     private Integer following;
-    private Integer totalLikes;
+    private Integer likesSaves;
 
 
-    public User(String firstName, String lastName, String username, Integer profilePic, Integer followers, Integer following, Integer totalLikes) {
+    public User(String firstName, String lastName, String username, Integer profilePic, Integer followers, Integer following, Integer likesSaves) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.username = username;
         this.profilePic = profilePic;
         this.followers = followers;
         this.following = following;
-        this.totalLikes = totalLikes;
+        this.likesSaves = likesSaves;
     }
 
     public String getFirstName() {
@@ -73,11 +73,11 @@ public class User {
     }
 
     public Integer getTotalLikes() {
-        return totalLikes;
+        return likesSaves;
     }
 
     public void setTotalLikes(Integer totalLikes) {
-        this.totalLikes = totalLikes;
+        this.likesSaves = totalLikes;
     }
 
 

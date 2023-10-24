@@ -53,6 +53,18 @@ public class UploadFragment extends Fragment implements EasyPermissions.Permissi
         //Define camera $ storage permissions
         String[] permissions = {Manifest.permission.CAMERA, Manifest.permission.READ_EXTERNAL_STORAGE};
 
+        createPost.setOnClickListener(v ->{
+            if(EasyPermissions.hasPermissions(requireActivity(), permissions)){
+                startActivity(new Intent(getActivity(), CreatePostActivity.class));
+            }else{
+                //permission not granted, request it
+                EasyPermissions.requestPermissions(requireActivity(),
+                        "App needs access to your camera & storage",
+                        123,
+                        permissions);
+            }
+        });
+
         uploadItem.setOnClickListener(v -> {
             if(EasyPermissions.hasPermissions(requireActivity(), permissions)){
                 buttonSelected = 2;
@@ -111,7 +123,6 @@ public class UploadFragment extends Fragment implements EasyPermissions.Permissi
                             String downloadUrl = uri.toString();
                             //store the URL in current user's images database
                             switch (buttonSelected){
-                                case 1:
                                 case 2:
                                     uploadToCloset(downloadUrl);
                                 case 3:
