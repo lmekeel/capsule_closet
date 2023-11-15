@@ -16,3 +16,4 @@ dependencyResolutionManagement {
 }
 rootProject.name = "StyleCap"
 include ':app'
+include ':openCV'

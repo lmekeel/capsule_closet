@@ -110,6 +110,7 @@ public class UploadFragment extends Fragment implements EasyPermissions.Permissi
 
                 // Loop through the selected image URIs and upload each one
                 for (Uri imageUri : imagesSelected) {
+
                     // Create a reference to the location in Firebase Storage where you want to store the image
                     StorageReference imageRef = storageRef.child("images/" + imageUri.getLastPathSegment());
 
@@ -148,6 +149,7 @@ public class UploadFragment extends Fragment implements EasyPermissions.Permissi
     }
 
     private void saveToOutfits(String downloadUrl){
+
         DatabaseReference userImagesRef;
         FirebaseUser UserId = FirebaseAuth.getInstance().getCurrentUser();
 
@@ -225,10 +227,6 @@ public class UploadFragment extends Fragment implements EasyPermissions.Permissi
             Toast.makeText(getActivity(), "Permission Denied", Toast.LENGTH_SHORT).show();
         }
     }
-
-
-
-
 
 
 

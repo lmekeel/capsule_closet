@@ -3,6 +3,8 @@ package com.example.curacap;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
@@ -12,6 +14,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import org.opencv.android.OpenCVLoader;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -24,6 +27,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        if(OpenCVLoader.initDebug()) Log.d("LOADED","success");
+        else Log.d("LOADED", "err");
 
         //Get user
         auth = FirebaseAuth.getInstance();

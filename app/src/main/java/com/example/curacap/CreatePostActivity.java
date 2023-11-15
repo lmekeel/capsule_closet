@@ -28,6 +28,8 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 import droidninja.filepicker.FilePickerBuilder;
 import droidninja.filepicker.FilePickerConst;
@@ -124,8 +126,6 @@ public class CreatePostActivity extends AppCompatActivity {
                 .setSelectedFiles(selectedImage)
                 .setActivityTheme(R.style.CustomTheme)
                 .pickPhoto(this);
-
-
     }
 
     //Gets image data selected in FilePicker for further actions
@@ -153,6 +153,7 @@ public class CreatePostActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+
     private void addPostToDatabase(String url){
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         assert user != null;
@@ -165,10 +166,18 @@ public class CreatePostActivity extends AppCompatActivity {
                     String username = snapshot.child("username").getValue(String.class);
 
                 if(username != null ){
-                    PostData post = new PostData(postTitle, postCaption, "@"+username, user.getUid(), url, 0);
 
                     DatabaseReference postsRef = FirebaseDatabase.getInstance().getReference("posts")
                             .push(); // Push generates a unique key for each post
+
+                    String postID = postsRef.getKey();
+
+                    PostData post = new PostData(postTitle, postCaption, "@"+username, user.getUid(), url, 0, postID, false);
+
+                    Map<String, Boolean> map = new HashMap<>();
+                    map.put(user.getUid(), false);
+                    post.setLikedByUsers(map);
+
 
                     postsRef.setValue(post)
                             .addOnSuccessListener(aVoid -> {

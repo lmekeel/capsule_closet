@@ -1,25 +1,37 @@
 package com.example.curacap;
 
 
+import java.util.Map;
+
 public class PostData {
+
+
+    private String postId;
     private String title;
     private String caption;
     private String userID;
     private String username;
     private String imageUrl;
     private int likeCount;
+    private boolean liked;
+
+
+    private Map<String, Boolean> likedByUsers;
 
     public PostData(){
 
     }
 
-    public PostData(String title, String caption, String username, String userID, String imageUrl, int likeCount) {
+    public PostData(String title, String caption, String username, String userID, String imageUrl, int likeCount, String postId, boolean liked) {
         this.title = title;
         this.caption = caption;
         this.username = username;
         this.userID = userID;
         this.imageUrl = imageUrl;
         this.likeCount = likeCount;
+        this.postId = postId;
+        this.liked = liked;
+
     }
 
     public String getTitle() {
@@ -69,6 +81,40 @@ public class PostData {
         this.likeCount = likeCount;
     }
 
+    public boolean isLiked() {
+        return liked;
+    }
 
+    public void setLiked(boolean liked) {
+        this.liked = liked;
+    }
 
+    public String getPostId() {
+        return postId;
+    }
+
+    public void setPostId(String postId) {
+        this.postId = postId;
+    }
+    public Map<String, Boolean> getLikedByUsers() {
+        return likedByUsers;
+    }
+
+    public void setLikedByUsers(Map<String, Boolean> likedByUsers) {
+        this.likedByUsers = likedByUsers;
+    }
+    @Override
+    public String toString() {
+        return "PostData{" +
+                "postId='" + postId + '\'' +
+                ", title='" + title + '\'' +
+                ", caption='" + caption + '\'' +
+                ", userID='" + userID + '\'' +
+                ", username='" + username + '\'' +
+                ", imageUrl='" + imageUrl + '\'' +
+                ", likeCount=" + likeCount +
+                ", liked=" + liked +
+                ", likedByUsers=" + likedByUsers +
+                '}';
+    }
 }

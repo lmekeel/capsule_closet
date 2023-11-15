@@ -29,7 +29,6 @@ import java.util.ArrayList;
  */
 public class HomeFragment extends Fragment {
     private RecyclerView recyclerView;
-    private MyAdapter adapter;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -108,6 +107,7 @@ public class HomeFragment extends Fragment {
                     String username = dataSnapshot.child("username").getValue(String.class);
                     String userID = dataSnapshot.child("userID").getValue(String.class);
                     int likeCount = dataSnapshot.child("likeCount").getValue(Integer.class);
+                    String postID = dataSnapshot.child("postId").getValue(String.class);
 
 
                     PostData post = new PostData();
@@ -117,6 +117,7 @@ public class HomeFragment extends Fragment {
                     post.setUserID(userID);
                     post.setUsername(username);
                     post.setCaption(caption);
+                    post.setPostId(postID);
                     //Add Url to images array
                     feedData.add(post);
 
